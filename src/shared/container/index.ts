@@ -7,6 +7,9 @@ import { CategoryRepository } from "@modules/cars/infra/typeorm/repositories/Cat
 
 import { ISpecificationRepository } from "@modules/cars/repositories/ISpecificationRepository";
 import { SpecificationRepository } from "@modules/cars/infra/typeorm/repositories/SpecificationRepository";
+import { CannotAttachTreeChildrenEntityError } from "typeorm";
+import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
+import { CarsRepository } from "@modules/cars/infra/typeorm/repositories/CarsRepository";
 
 container.registerSingleton<ICategoryRepository>(
   "CategoryRepository",
@@ -18,7 +21,12 @@ container.registerSingleton<ISpecificationRepository>(
   SpecificationRepository
 );
 
-container.registerSingleton<IUsersRepository> (
+container.registerSingleton<IUsersRepository>(
   "UsersRepository",
   UsersRepository
-)
+);
+
+container.registerSingleton<ICarsRepository>(
+  "CarsRepository", 
+  CarsRepository
+);
