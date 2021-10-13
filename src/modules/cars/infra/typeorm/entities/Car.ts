@@ -38,7 +38,7 @@ class Car {
   @Column()
   brand: string;
 
-  @ManyToOne(() => Category)
+  @ManyToOne(() => Category, (category) => category.cars, { eager: true })
   @JoinColumn({ name: "category_id" })
   category: Category;
 
@@ -48,8 +48,8 @@ class Car {
   @ManyToMany(() => Specification)
   @JoinTable({
     name: "specifications_cars",
-    joinColumns: [{name: "car_id"}],
-    inverseJoinColumns:[{name: "specification_id"}]
+    joinColumns: [{ name: "car_id" }],
+    inverseJoinColumns: [{ name: "specification_id" }],
   })
   specifications: Specification[];
 

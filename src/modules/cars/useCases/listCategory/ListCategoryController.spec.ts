@@ -49,8 +49,6 @@ describe("List categories", () => {
 
     const responseList = await request(app).get("/categories");
 
-    console.log(responseList.body);
-
     expect(responseList.status).toBe(200);
     expect(responseList.body.length).toBe(1);
   });
