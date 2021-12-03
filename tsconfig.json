@@ -2,10 +2,10 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "strict": true,
-    "noImplicitReturns": false,
 
+    "rootDir": "./",
     "baseUrl": "./src",
+    "outDir": "./dist",
     "paths": {
       "@modules/*": ["modules/*"],
       "@config/*": ["config/*"],
@@ -20,7 +20,6 @@
 
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "strictPropertyInitialization": false
+    "resolveJsonModule": true
   }
 }

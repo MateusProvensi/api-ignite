@@ -38,7 +38,7 @@ class Car {
   @Column()
   brand: string;
 
-  @ManyToOne(() => Category, (category) => category.cars, { eager: true })
+  @ManyToOne(() => Category, (category) => category.cars)
   @JoinColumn({ name: "category_id" })
   category: Category;
 

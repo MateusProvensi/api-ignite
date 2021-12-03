@@ -25,7 +25,7 @@ class Category {
   @CreateDateColumn()
   created_at: Date;
 
-  @OneToMany(() => Car, (car) => car.category)
+  @OneToMany(() => Car, (car) => car.category, { eager: true })
   cars: Car[];
 
   constructor() {
